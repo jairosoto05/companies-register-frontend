@@ -1,0 +1,35 @@
+[
+    {
+      "id": 1,
+      "rnc": "123456789",
+      "name": "Company 1",
+      "traceName": "Company 1",
+      "category": "Category 1",
+      "paymentScheme": "Payment Scheme 1",
+      "state": "State 1",
+      "ecomonicActivity": "Ecomonic Activity 1",
+      "localManagement": "Local Management 1"
+    },
+    {
+      "id": 2,
+      "rnc": "123456789",
+      "name": "Company 2",
+      "traceName": "Company 2",
+      "category": "Category 2",
+      "paymentScheme": "Payment Scheme 2",
+      "state": "State 2",
+      "ecomonicActivity": "Ecomonic Activity 2",
+      "localManagement": "Local Management 2"
+    },
+    {
+      "id": 3,
+      "rnc": "123456789",
+      "name": "Company 3",
+      "traceName": "Company 3",
+      "category": "Category 3",
+      "paymentScheme": "Payment Scheme 3",
+      "state": "State 3",
+      "ecomonicActivity": "Ecomonic Activity 3",
+      "localManagement": "Local Management 3"
+    }
+  ]

@@ -1,0 +1,26 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">RNC</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Nombre Comercial</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Esquema De Pago</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Actividad Económica</th>
+        <th scope="col">Administracion Local</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let company of companies">
+            <td>{{company.rnc}}</td>
+            <td>{{company.name}}</td>
+            <td>{{company.traceName}}</td>
+            <td>{{company.category}}</td>
+            <td>{{company.paymentScheme}}</td>
+            <td>{{company.state}}</td>
+            <td>{{company.ecomonicActivity}}</td>
+            <td>{{company.localManagement}}</td>
+      </tr>
+    </tbody>
+  </table>
