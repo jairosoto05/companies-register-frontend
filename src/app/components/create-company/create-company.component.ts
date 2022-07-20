@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { CompanyService } from 'src/app/services/company.service';
+import { ICompany } from '../company';
 
 @Component({
   selector: 'app-create-company',
@@ -8,16 +10,17 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 })
 export class CreateCompanyComponent implements OnInit {
 
-  constructor(private formBulder: FormBuilder) { }
+  constructor(private formBulder: FormBuilder,
+    private companyService: CompanyService) { }
 
   public companyForm: FormGroup = this.formBulder.group({
     rnc: new FormControl(''),
     name: new FormControl(''),
-    traceName: new FormControl(''),
+    tradeName: new FormControl(''),
     category: new FormControl(''),
     paymentScheme: new FormControl(''),
     state: new FormControl(''),
-    ecomonicActivity: new FormControl(''),
+    economicActivity: new FormControl(''),
     localManagement: new FormControl('')
   });
 
@@ -25,7 +28,21 @@ export class CreateCompanyComponent implements OnInit {
   }
 
   SaveData() {
-    console.log(this.companyForm.value);
+    let company: ICompany = {
+      rnc: this.companyForm.value.rnc,
+      name: this.companyForm.value.name,
+      tradeName: this.companyForm.value.tradeName,
+      category: this.companyForm.value.category,
+      paymentScheme: this.companyForm.value.paymentScheme,
+      state: this.companyForm.value.state,
+      economicActivity: this.companyForm.value.economicActivity,
+      localManagement: this.companyForm.value.localManagement
+    };
+    this.companyService.addCompany(company).subscribe(
+      () => {
+        console.log('Company added successfully');
+      }
+    );
+    this.companyForm.reset();
   }
-
 }

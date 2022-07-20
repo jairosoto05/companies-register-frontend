@@ -1,26 +1,42 @@
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">RNC</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Nombre Comercial</th>
-        <th scope="col">Categoria</th>
-        <th scope="col">Esquema De Pago</th>
-        <th scope="col">Estado</th>
-        <th scope="col">Actividad Económica</th>
-        <th scope="col">Administracion Local</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let company of companies">
-            <td>{{company.rnc}}</td>
-            <td>{{company.name}}</td>
-            <td>{{company.traceName}}</td>
-            <td>{{company.category}}</td>
-            <td>{{company.paymentScheme}}</td>
-            <td>{{company.state}}</td>
-            <td>{{company.ecomonicActivity}}</td>
-            <td>{{company.localManagement}}</td>
-      </tr>
-    </tbody>
-  </table>
+<table class="table text-center text-capitalize">
+  <thead>
+    <tr>
+      <th scope="col">RNC</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Nombre Comercial</th>
+      <th scope="col">Categoria</th>
+      <th scope="col">Esquema De Pago</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Actividad Económica</th>
+      <th scope="col">Administracion Local</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let company of companies">
+      <td>{{company.rnc}}</td>
+      <td>{{company.name}}</td>
+      <td>{{company.tradeName}}</td>
+      <td>{{company.category}}</td>
+      <td>{{company.paymentScheme}}</td>
+      <td>{{company.state}}</td>
+      <td>{{company.economicActivity}}</td>
+      <td>{{company.localManagement}}</td>
+      <td>
+        <div class="dropdown">
+          <button class="btn btn-light" type="button" id="dropdownMenuButton1"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+              <path
+                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+            </svg>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item btn" routerLink="/actualizar/{{company.rnc}}" >editar</a></li>
+            <li><a class="dropdown-item btn" (click)="deleteCompany(company.rnc)">borrar</a></li>
+          </ul>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,12 +1,11 @@
 export interface ICompany {
-    id: number;
     rnc: string;
     name: string;
-    traceName: string;
+    tradeName: string;
     category: string;
     paymentScheme: string;
     state: string;
-    ecomonicActivity: string;
+    economicActivity: string;
     localManagement: string;
 
 }
